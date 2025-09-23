@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javier Egea Terry - Sales Executive & Growth Strategist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #1a202c;
+            background: #f7fafc;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            background-image: url('./javier-profile.jpeg');
+            background-size: cover;
+            background-position: center;
+            border: 4px solid #e2e8f0;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+        }
+
+        .header .subtitle {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        .header .description {
+            font-size: 1.1rem;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: #4299e1;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            background: #3182ce;
+            transform: translateY(-1px);
+        }
+
+        /* Section Styling */
+        .section {
+            background: white;
+            margin-bottom: 32px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: #4299e1;
+            font-size: 1.5rem;
+        }
+
+        /* Stats Grid */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Experience Items */
+        .experience-item, .project-item {
+            border-left: 4px solid #4299e1;
+            padding: 24px;
+            margin-bottom: 24px;
+            background: #f8f9fa;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .experience-item:last-child, .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            margin-bottom: 16px;
+        }
+
+        .item-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 6px;
+        }
+
+        .item-company {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4299e1;
+            margin-bottom: 4px;
+        }
+
+        .item-date {
+            font-size: 0.875rem;
+            color: #718096;
+            font-weight: 400;
+        }
+
+        .item-description {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .achievement {
+            background: #e6fffa;
+            border-left: 3px solid #38b2ac;
+            padding: 12px 16px;
+            margin: 8px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95rem;
+            color: #1a202c;
+        }
+
+        .achievement i {
+            color: #38b2ac;
+            margin-right: 8px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: #edf2f7;
+            color: #2d3748;
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .skill-item:hover {
+            background: #4299e1;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 24px;
+            margin-bottom: 20px;
+            border-radius: 0 12px 12px 0;
+            position: relative;
+        }
+
+        .testimonial:last-child {
+            margin-bottom: 0;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #2d3748;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #38a169;
+            font-size: 0.95rem;
+        }
+
+        /* Languages */
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        .language-item {
+            text-align: center;
+            padding: 20px 16px;
+            background: #edf2f7;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .language-item:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+
+        .flag {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+
+        .language-level {
+            font-size: 0.875rem;
+            color: #718096;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            text-align: center;
+            padding: 48px 40px;
+            border-radius: 16px;
+            margin-top: 32px;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: #3182ce;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+            
+            .header, .section {
+                padding: 24px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header, .section {
+                padding: 20px;
+            }
+            
+            .cta-section {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-img"></div>
+            <h1>Javier Egea Terry</h1>
+            <div class="subtitle">Senior Account Executive & Growth Strategist</div>
+            <p class="description">Expert closer professional, 20 yo with 2 years of sales experience in negotiation and persuasion, highly specialized in AI, paid media and marketing, and B2B sales with exceptional closing abilities.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:contact@javier-egea.com">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/javier-egea-pwm/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="tel:+34614405061">
+                    <i class="fas fa-phone"></i> Call Me
+                </a>
+            </div>
+        </header>
+
+        <!-- Key Metrics Section -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-chart-line"></i>
+                Key Performance Metrics
+            </h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="stat-number">120%</span>
+                    <div class="stat-label">Sales Quota Exceeded</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">250+</span>
+                    <div class="stat-label">Active Pipeline Leads</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">€1,500</span>
+                    <div class="stat-label">Average Deal Value Closed</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i>
+                Professional Experience
+            </h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Senior Mid Market Account Executive & Inbound Supervisor</div>
+                    <div class="item-company">Octo360 Agency (HubSpot Gold Partner) & Servicios Locales Marketing</div>
+                    <div class="item-date">September 2024 - Present</div>
+                </div>
+                <p class="item-description">Leading CRM optimization and paid media strategies for B2B companies while supervising inbound sales processes and managing full-cycle sales operations.</p>
+                <div class="achievement">
+                    <i class="fas fa-trophy"></i>
+                    Consistently exceeded monthly targets with 1,000+ cold calls and 250+ active pipeline leads
+                </div>
+                <div class="achievement">
+                    <i class="fas fa-rocket"></i>
+                    Promoted to Inbound Supervisor within 8 months for exceptional performance
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">High Ticket Closer</div>
+                    <div class="item-company">MyContent Agency</div>
+                    <div class="item-date">June 2024 - August 2024</div>
+                </div>
+                <p class="item-description">Specialized in closing high-value inbound deals in consultative sales environment under former Google Ireland executive mentorship.</p>
+                <div class="achievement">
+                    <i class="fas fa-euro-sign"></i>
+                    Averaged €2,000-€5,000 deal values with 100% inbound lead focus
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Business Development Representative</div>
+                    <div class="item-company">Web Estates</div>
+                    <div class="item-date">February 2024 - June 2024</div>
+                </div>
+                <p class="item-description">Managed full sales cycle targeting Spanish and English-speaking real estate professionals in the U.S. market.</p>
+                <div class="achievement">
+                    <i class="fas fa-phone-volume"></i>
+                    Made 80+ daily cold calls in bilingual environment, exceeding lead generation targets
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Door-to-Door Sales Representative</div>
+                    <div class="item-company">Bofrost</div>
+                    <div class="item-date">November 2023 - February 2024</div>
+                </div>
+                <p class="item-description">Direct sales in Spain's highest unemployment city, demonstrating resilience and exceptional closing abilities at age 18 with no prior experience.</p>
+                <div class="achievement">
+                    <i class="fas fa-medal"></i>
+                    Exceeded sales quotas by 120% through cold door-to-door approach
+                </div>
+                <div class="achievement">
+                    <i class="fas fa-handshake"></i>
+                    Closed 50+ deals monthly with €30 average order value
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Projects Section -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-robot"></i>
+                AI Innovation Projects
+            </h2>
+            
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">YourAIAgency (TuAgenciaArtificial)</div>
+                    <div class="item-company">Founder & Lead Developer</div>
+                    <div class="item-date">June 2023 - November 2023</div>
+                </div>
+                <p class="item-description">Founded AI integration agency specializing in chatbot development and workflow automation using advanced tools like Zapier. Delivered customized AI-driven solutions to streamline business processes and enhance customer service across various industries.</p>
+                <div class="achievement">
+                    <i class="fas fa-cogs"></i>
+                    Developed custom AI chatbots for multiple business verticals
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">GlobalCustomerAI</div>
+                    <div class="item-company">AI Solution Development</div>
+                    <div class="item-date">2025 - Present</div>
+                </div>
+                <p class="item-description">Advanced AI customer service platform focusing on multilingual support and automated workflow integration for global businesses.</p>
+                <div class="achievement">
+                    <i class="fas fa-globe"></i>
+                    Designed multilingual AI solutions for international market penetration
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Testimonials -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-quote-left"></i>
+                Professional Testimonials
+            </h2>
+            
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    "You have been the best salesperson we've had here in 13 years."
+                </div>
+                <div class="testimonial-author">
+                    — Enrique, Head of Operations at Bofrost Jerez <span style="display: block; text-align: right; font-style: italic; color: #718096; margin-top: 4px;">(At 18 years old)</span>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    "You are the best salesperson we have hired."
+                </div>
+                <div class="testimonial-author">
+                    — Javier S., Sales Director at Google Canada <span style="display: block; text-align: right; font-style: italic; color: #718096; margin-top: 4px;">(At 19 years old)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Skills -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-star"></i>
+                Core Competencies
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-item">B2B Prospecting</div>
+                <div class="skill-item">HubSpot CRM</div>
+                <div class="skill-item">High-Ticket Closing</div>
+                <div class="skill-item">Paid Media Strategy</div>
+                <div class="skill-item">Pipeline Management</div>
+                <div class="skill-item">BANT Qualification</div>
+                <div class="skill-item">STAR Framework</div>
+                <div class="skill-item">Consultative Selling</div>
+                <div class="skill-item">Lead Generation</div>
+                <div class="skill-item">Google Ads</div>
+                <div class="skill-item">Meta Advertising</div>
+                <div class="skill-item">AI Integration</div>
+                <div class="skill-item">Negotiation</div>
+                <div class="skill-item">Cold Calling</div>
+                <div class="skill-item">Sales Psychology</div>
+                <div class="skill-item">Digital Marketing</div>
+                <div class="skill-item">Cloud Computing</div>
+                <div class="skill-item">Cybersecurity</div>
+                <div class="skill-item">Data & Analytics</div>
+                <div class="skill-item">Business Intelligence</div>
+                <div class="skill-item">Artificial Intelligence</div>
+                <div class="skill-item">Machine Learning</div>
+                <div class="skill-item">DevOps</div>
+                <div class="skill-item">IT Operations</div>
+                <div class="skill-item">ERP Systems</div>
+                <div class="skill-item">CRM Solutions</div>
+                <div class="skill-item">Professional Services</div>
+                <div class="skill-item">Fintech</div>
+                <div class="skill-item">DeFi</div>
+                <div class="skill-item">Cryptocurrency</div>
+                <div class="skill-item">Web3</div>
+                <div class="skill-item">Blockchain</div>
+                <div class="skill-item">Smart Contracts</div>
+            </div>
+        </section>
+
+        <!-- Training & Education -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                Sales Training & Education
+            </h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Digital Business Administration Program</div>
+                    <div class="item-company">Capital Club - Delaware</div>
+                    <div class="item-date">2023 - 2025 (Remote)</div>
+                </div>
+                <p class="item-description">Business Administration and Management focused on digital transformation and modern business practices.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Advanced Sales Training Programs</div>
+                    <div class="item-company">Multiple Industry Leaders</div>
+                    <div class="item-date">2023 - Present</div>
+                </div>
+                <p class="item-description">Comprehensive sales training under industry legends and modern sales experts, focusing on high-ticket closing, consumer psychology, and advanced sales methodologies.</p>
+                <div class="achievement">
+                    <i class="fas fa-certificate"></i>
+                    Zig Ziglar - Classic Sales Fundamentals and Psychology
+                </div>
+                <div class="achievement">
+                    <i class="fas fa-certificate"></i>
+                    Alex Hormozi - High-Value Offer Creation and Closing
+                </div>
+                <div class="achievement">
+                    <i class="fas fa-certificate"></i>
+                    Grant Cardone - 10X Sales Philosophy and Techniques
+                </div>
+                <div class="achievement">
+                    <i class="fas fa-certificate"></i>
+                    Alfonso & Christian - European Sales Strategies
+                </div>
+                <div class="achievement">
+                    <i class="fas fa-certificate"></i>
+                    Augusto Bianchi - Advanced Negotiation Tactics
+                </div>
+                <div class="achievement">
+                    <i class="fas fa-certificate"></i>
+                    Daniel G - Consultative Selling and Customer Psychology
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-globe-americas"></i>
+                Languages
+            </h2>
+            <div class="languages">
+                <div class="language-item">
+                    <span class="flag">🇪🇸</span>
+                    <div class="language-name">Spanish</div>
+                    <div class="language-level">Native</div>
+                </div>
+                <div class="language-item">
+                    <span class="flag">🇺🇸</span>
+                    <div class="language-name">English</div>
+                    <div class="language-level">Fluent</div>
+                </div>
+                <div class="language-item">
+                    <span class="flag">🇫🇷</span>
+                    <div class="language-name">French</div>
+                    <div class="language-level">Basic</div>
+                </div>
+                <div class="language-item">
+                    <span class="flag">🇵🇹</span>
+                    <div class="language-name">Portuguese</div>
+                    <div class="language-level">Learning</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2 class="cta-title">Ready to Drive Growth Together?</h2>
+            <p class="cta-description">Let's discuss how I can help scale your sales operations and drive measurable results for your business.</p>
+            <a href="mailto:contact@javier-egea.com" class="cta-button">
+                <i class="fas fa-rocket"></i>
+                Let's Connect
+            </a>
+        </section>
+    </div>
+
+    <script>
+        // Smooth animations on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections for animation
+            const sections = document.querySelectorAll('.section, .cta-section');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+
+            // Animate numbers
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const text = stat.textContent;
+                if (text.includes('%')) {
+                    animateNumber(stat, 0, parseInt(text), 1500, '%');
+                } else if (text.includes('+')) {
+                    animateNumber(stat, 0, parseInt(text), 1500, '+');
+                } else if (text.includes('€')) {
+                    animateNumber(stat, 0, parseInt(text.replace('€', '').replace(',', '')), 2000, '€', true);
+                }
+            });
+        });
+
+        function animateNumber(element, start, end, duration, suffix = '', isEuro = false) {
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(start + (end - start) * progress);
+                
+                if (isEuro) {
+                    element.textContent = '€' + current.toLocaleString();
+                } else {
+                    element.textContent = current + suffix;
+                }
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+    </script>
+</body>
+</html>
